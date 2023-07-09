@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Javascript Quiz and Score Keeper">
+        <title>Quiz Maker</title>
+        <link rel="stylesheet" href="/assets/css/style.css">
+    </head>
+
+<body>
+
+<!--
+
+Current Section: display none
+Next Section: display inline block//block
+
+buttons one step to the next, make sure you code what is going to disappear and what will appear
+
+-->
+    <section class="quizcontainer">
+
+        <section class="start">
+            <header>
+                <h1>Javascript Quiz Challenge</h1>
+                <p id="begin">Take a Javascript quiz to see if you know your stuff!</p>
+                <p><button class="starterbutton">Begin</button></p>
+            </header>
+        </section>
+
+        <section class="timer">
+            <p class="timer">Timer will start when you click begin.</p>
+        </section>
+
+        <section class="questionsandanswers hidden"> 
+            <div class="questionasked">
+                <p><h2 id="questionasked">Question</h2></p>
+            </div> 
+            <div>
+                <ul class="answersegment">
+                    <li><button class="answerbutton" type ="button">Answer 1</button></li> <!--Need unique IDs for each button. ?? 1. "click event listener" -> Data-response 1. -->
+                    <li><button class="answerbutton" type ="button">Answer 2</button></li>
+                    <li><button class="answerbutton" type ="button">Answer 3</button></li>
+                    <li><button class="answerbutton" type ="button">Answer 4</button></li>
+                </ul>
+                <hr>
+                <p class="reveal">You got it!/Whoops</p>
+            </div>
+        </section>
+
+                <!-- Typed as quick as I could as Mark talked.
+               
+                    *Create a class hidden with property of display=none(But...take it off while playing with HTML to be able to view it.). 
+                
+                    *Create a class that will also be the current section view
+
+                    *Create a class that will be next section view in javascript. 
+                    
+                        look for classes added to  
+
+                    -->
+        <section class="gradedscore hidden">
+            <h2>You finished the quiz.</h2>
+            <p>Final Score:</p> <!--Final Score Box-->
+            <form>
+                <label>Name:</label>
+                <input type="text" placeholder="Enter Your Name..." minlength="3" maxlength="100" width=200px />
+            </form>
+            <button class="tohighscorebutton" type="button">Submit to the Scoreboard</button>
+        </section>
+        
+        <section class="highscoreboard hidden">
+            <h2>High Scores</h2>
+            <button class="starterbutton" type="button">Return</button>
+            <button class="starterbutton" type="button">Reset the Score Board</button>
+        </section>
+
+        </section>
+        <script src="assets/js/script.js"></script>
+    </body>
+</html>
