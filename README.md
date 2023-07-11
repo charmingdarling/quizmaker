@@ -54,7 +54,7 @@ Here is what I could understand from the example gif of what we needed to have.
     Header2 // Question Size
     Buttons
     <hr> tag
-    <p> Correct/Wrong
+    <p> Correct/Wrong (Check against answer, loop next question, add score to grade)
 
 3. Score/Graded
     All Done
@@ -68,3 +68,22 @@ Here is what I could understand from the example gif of what we needed to have.
     Clear High Scores Button
 ```
 
+ Outline. 
+
+1. When USER clicks on the starterbutton. I want the 'start' class to be hidden.
+2. Need to start a timer.
+3. How do I show the next section and hide the current section?
+4. How do I get the question to show up with its alotted answer bank? 
+    Show questions on the page using JS.
+
+    4a. I think I need to use a click event listener in a single function. 
+
+    4b. Use a separate function for creating an array of question/objects?
+        i.      property = question
+        ii.     propery = answer choices
+        iii.    property = correct answer
+
+    4c. I know I need to index this array to point to the correct answer, but how?
+
+    4d. https://medium.com/swlh/writing-optimized-code-in-js-by-understanding-hidden-classes-3dd42862ad1d#:~:text=The%20purpose%20of%20hidden%20classes,class%20is%20attached%20to%20it.
+        i. This explains a little of defining your variables with cupcakes

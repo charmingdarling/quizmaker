@@ -9,17 +9,8 @@
     </head>
 
 <body>
-
-<!--
-
-Current Section: display none
-Next Section: display inline block//block
-
-buttons one step to the next, make sure you code what is going to disappear and what will appear
-
--->
+    <section class="timer"><span>Time:</span></section>
     <section class="quizcontainer">
-
         <section class="start">
             <header>
                 <h1>Javascript Quiz Challenge</h1>
@@ -28,24 +19,24 @@ buttons one step to the next, make sure you code what is going to disappear and 
             </header>
         </section>
 
-        <section class="timer">
-            <p class="timer">Timer will start when you click begin.</p>
-        </section>
-
         <section class="questionsandanswers hidden"> 
-            <div class="questionasked">
+            <div class="questionarea">
                 <p><h2 id="questionasked">Question</h2></p>
             </div> 
-            <div>
+            
+            <div id="choices">
                 <ul class="answersegment">
-                    <li><button class="answerbutton" type ="button">Answer 1</button></li> <!--Need unique IDs for each button. ?? 1. "click event listener" -> Data-response 1. -->
+                    <li><button class="answerbutton" type ="button">Answer 1</button></li> 
                     <li><button class="answerbutton" type ="button">Answer 2</button></li>
                     <li><button class="answerbutton" type ="button">Answer 3</button></li>
                     <li><button class="answerbutton" type ="button">Answer 4</button></li>
                 </ul>
                 <hr>
-                <p class="reveal">You got it!/Whoops</p>
             </div>
+
+            <div id="feedback" class="hidden">
+            </div>
+
         </section>
 
                 <!-- Typed as quick as I could as Mark talked.
@@ -59,12 +50,12 @@ buttons one step to the next, make sure you code what is going to disappear and 
                         look for classes added to  
 
                     -->
-        <section class="gradedscore hidden">
+        <section id="gradedscore" class="hidden">
             <h2>You finished the quiz.</h2>
-            <p>Final Score:</p> <!--Final Score Box-->
+            <p>Final Score: <span id="finalscore"></span></p> <!--Final Score Box-->
             <form>
                 <label>Name:</label>
-                <input type="text" placeholder="Enter Your Name..." minlength="3" maxlength="100" width=200px />
+                <input id="name" type="text" placeholder="Enter Your Name..." maxlength="100" width=200px />
             </form>
             <button class="tohighscorebutton" type="button">Submit to the Scoreboard</button>
         </section>
