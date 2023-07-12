@@ -40,9 +40,10 @@ const questions = [
 
 const timerEl = document.querySelector(".timer");
 var secondsLeft = 60;
+var timerInterval
 
 function setTimer(){
-    var timerInterval = setInterval(function(){
+        timerInterval = setInterval(function(){
         secondsLeft--;
         timerEl.textContent = secondsLeft + " seconds left.";
 
@@ -53,7 +54,7 @@ function setTimer(){
         }
 /*
 
-        if (submitScoreEl.onclick = savehighscore === true);
+        if (submitScoreEl.onclick == savehighscore === true), then say end my interval now;
         clearInterval(timerInterval);
         
         //the endquiz section is active, pause timer) ****
@@ -130,42 +131,52 @@ var finalscoreEl = document.querySelector("#finalscore")
 var endscreen = document.querySelector("#gradedscore")
 
 function endquiz(){
-    //Stop Timer
+    //Stop Timer --- > the clear interval below? 
+    clearInterval(timerInterval);
     endscreen.removeAttribute("class")
 
     finalscoreEl.textContent = secondsLeft
     questionsandanswers.setAttribute("class", "hidden")
+    
 }
 //------High Score Leaderboard------//
 
 const submitbtnEl = document.querySelector(".tohighscorebutton");
-const gradedscore = document.querySelector('gradedscore');
-const highscoreboard = document.querySelector('highscoreboard');
+const gradedscore = document.querySelector('.gradedscore');
+const highscoreboard = document.querySelector('.highscoreboard');
 
 submitbtnEl.addEventListener('click', ()=> {
     console.log('Submitting to high score board.');
-    highscoreboard.classList.add('hidden'); //this is null, why? ***
-    gradedscore.classList.remove('hidden');
+    highscoreboard.classList.remove('hidden'); 
+    //this is null, why? - It was null because you didn't put a '.' when you querySelector it in the quotes above.  ***
+    gradedscore.classList.add('hidden');
     savehighscore();
     rendersavehighscore();
-    console.log('High score is now saved.')
+    console.log('Running savehighscore and rendersavehighscore function.')
 });
-//something something
+
 submitbtnEl.onclick = savehighscore
+
+//Hoping that this variable defines the user input
 const nameEl = document.querySelector("#name")
 
 function savehighscore() {
     //Save related data as an object
     var usernameandscore = {
         username: nameEl.value,
-        finalscore: finalscoreEl.value,
+        finalscore: finalscoreEl.textContent,
     };
-    console.log('High Score Saved');
+    console.log('High Score is put in local storage.');
+    console.log(usernameandscore);
     //Use .setItem() to store object in storage and JSON.stringify to convert it as a string
-    localStorage.setItem("usernameandscore", JSON.stringify(usernameandscore));
+    localStorage.setItem(nameEl.value, JSON.stringify(usernameandscore));
+    //asking to store scores in an array
+    localStorage.["scores"] = [] //  <-Work Here
+    usernameandscore.length
 }
-    //want to grab the value of name of user input in input box
-    //want to grab the value of finalscore
+
+    // want to grab the value of name of user input in input box
+    // want to grab the value of finalscore
     // name and final score will be saved in local storage
     // name = key, final score = value (key, value)
 
@@ -180,4 +191,12 @@ function rendersavehighscore() {
         return;
     }
 }
+
+function init() {
+    rendersavehighscore();
+}
+init();
+
+var savedName = document.getElementById("userinitials");
+var savedScore = document.getElementById("savedscore");
 

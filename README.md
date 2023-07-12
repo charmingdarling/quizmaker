@@ -32,6 +32,10 @@ THEN I can save my initials and my score
 
 ![A user clicks through an interactive coding quiz, then enters initials to save the high score before resetting and starting over.](./Assets/04-web-apis-homework-demo.gif)
 
+## Link
+[JavaScript Quiz](https://charmingdarling.github.io/quizmaker/)
+
+[GitHub Repo](https://github.com/charmingdarling/quizmaker)
 
 ## HTML Outline 
 
