@@ -150,7 +150,7 @@ submitbtnEl.addEventListener('click', ()=> {
     rendersavehighscore();
     console.log('High score is now saved.')
 });
-
+//something something
 submitbtnEl.onclick = savehighscore
 const nameEl = document.querySelector("#name")
 
