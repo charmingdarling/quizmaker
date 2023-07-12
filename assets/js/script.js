@@ -46,14 +46,22 @@ function setTimer(){
         secondsLeft--;
         timerEl.textContent = secondsLeft + " seconds left.";
 
-        if(secondsLeft === 0) {
+        if (secondsLeft === 0) {
             clearInterval(timerInterval);
             sendMessage();
-            //execute function to end quiz
-            //and then question do I make the question area hidden here when timer done?
+            //execute function to end quiz ****
         }
+/*
+
+        if (submitScoreEl.onclick = savehighscore === true);
+        clearInterval(timerInterval);
+        
+        //the endquiz section is active, pause timer) ****
+
+ */       
     }, 1000);
 }
+
 function sendMessage(){
     timerEl.textContent= "Time's Up!";
 }
@@ -113,21 +121,63 @@ function answerquestion(event){
     }
 }
 
-choicesEl.onclick = answerquestion //if they click in choicesEl it will run answerquestion, which figures out if they clicked on an actual answer
+choicesEl.onclick = answerquestion 
+//if they click in choicesEl it will run answerquestion, which figures out if they clicked on an actual answer
 
-const nameEl = document.querySelector("#name")
+//------End Quiz, Show Final Score, Username Input------//
+
+var finalscoreEl = document.querySelector("#finalscore")
+var endscreen = document.querySelector("#gradedscore")
 
 function endquiz(){
-    var endscreen = document.querySelector("#gradedscore")
+    //Stop Timer
     endscreen.removeAttribute("class")
-    var finalscoreEl = document.querySelector("#finalscore")
+
     finalscoreEl.textContent = secondsLeft
     questionsandanswers.setAttribute("class", "hidden")
 }
-const submitbtn = document.querySelector(".tohighscorebutton")
+//------High Score Leaderboard------//
+
+const submitbtnEl = document.querySelector(".tohighscorebutton");
+const gradedscore = document.querySelector('gradedscore');
+const highscoreboard = document.querySelector('highscoreboard');
+
+submitbtnEl.addEventListener('click', ()=> {
+    console.log('Submitting to high score board.');
+    highscoreboard.classList.add('hidden'); //this is null, why? ***
+    gradedscore.classList.remove('hidden');
+    savehighscore();
+    rendersavehighscore();
+    console.log('High score is now saved.')
+});
+
+submitbtnEl.onclick = savehighscore
+const nameEl = document.querySelector("#name")
+
 function savehighscore() {
+    //Save related data as an object
+    var usernameandscore = {
+        username: nameEl.value,
+        finalscore: finalscoreEl.value,
+    };
+    console.log('High Score Saved');
+    //Use .setItem() to store object in storage and JSON.stringify to convert it as a string
+    localStorage.setItem("usernameandscore", JSON.stringify(usernameandscore));
+}
     //want to grab the value of name of user input in input box
     //want to grab the value of finalscore
     // name and final score will be saved in local storage
     // name = key, final score = value (key, value)
+
+function rendersavehighscore() {
+    //Use JSON.parse() to convert text to JavaScript object
+    var lastuserandscore = JSON.parse(localStorage.getItem("userAndScore"));
+    //Check if data is returned, if not exit out of the function
+    if (lastuserandscore !==null) {
+        document.querySelector("#name").textContent = lastuserandscore.username;
+        document.querySelector("#finalscore").textContent = lastuserandscore.finalscore;
+    } else {
+        return;
+    }
 }
+

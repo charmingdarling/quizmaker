@@ -23,7 +23,7 @@
             <div class="questionarea">
                 <p><h2 id="questionasked">Question</h2></p>
             </div> 
-            
+
             <div id="choices">
                 <ul class="answersegment">
                     <li><button class="answerbutton" type ="button">Answer 1</button></li> 
@@ -39,18 +39,7 @@
 
         </section>
 
-                <!-- Typed as quick as I could as Mark talked.
-               
-                    *Create a class hidden with property of display=none(But...take it off while playing with HTML to be able to view it.). 
-                
-                    *Create a class that will also be the current section view
-
-                    *Create a class that will be next section view in javascript. 
-                    
-                        look for classes added to  
-
-                    -->
-        <section id="gradedscore" class="hidden">
+        <section id="gradedscore" class="gradedscore hidden">
             <h2>You finished the quiz.</h2>
             <p>Final Score: <span id="finalscore"></span></p> <!--Final Score Box-->
             <form>
@@ -62,6 +51,7 @@
         
         <section class="highscoreboard hidden">
             <h2>High Scores</h2>
+            <label>Name: </label>
             <button class="starterbutton" type="button">Return</button>
             <button class="starterbutton" type="button">Reset the Score Board</button>
         </section>
