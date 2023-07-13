@@ -15,25 +15,31 @@ starterbutton.addEventListener('click', () => {
 let questionindex = 0
 const questions = [
     {
-        question: "What matches B?", 
-        answers: ["a", "b", "c", "d"], 
-        correct: "b"
+        question: "The ___________ type respresents a logical entity and is inhabited by two values: true and false?", 
+        answers: ["Boolean", "String", "Number", "Undefined"], 
+        correct: "Boolean"
     },
     {
-        question: "What matches A?", 
-        answers: ["a", "b", "c", "d"], 
-        correct: "a"
+        question: "What would you use when recalling an "id"", 
+        answers: [".", "@", "#", "~"], 
+        correct: "@"
     },
     {
-        question: "What matches C?", 
-        answers: ["a", "b", "c", "d"], 
-        correct: "c"
+        question: "A __________ is a function that's passed into another function, with the expectation that the ________ will be called at the appropriate time.", 
+        answers: ["hollerback", "primitive", "iteration", "callback"], 
+        correct: "callback"
     },
     {
-        question: "What matches D?", 
-        answers: ["a", "b", "c", "d"], 
-        correct: "d"
+        question: "_____________ ____________ is a technique that enables your program to start a potentially long-running task and still be able to be responsive to other events while that task runs.", 
+        answers: ["Synchronous programming", "Asynchronous programming", "Redundant programming", "None of the above"], 
+        correct: "Asynchronous programming"
     },
+    {
+        question: "What is a cross-platform, object-oriented scripting language used to make webpages interactive", 
+        answers: ["HTML", "JavaScript", "CSS", "The Internet"], 
+        correct: "JavaScript"
+    },
+    
 ];
 
 //------Timer Section------//
@@ -171,7 +177,7 @@ function savehighscore() {
     //Use .setItem() to store object in storage and JSON.stringify to convert it as a string
     localStorage.setItem(nameEl.value, JSON.stringify(usernameandscore));
     //asking to store scores in an array
-    localStorage.["scores"] = [] //  <-Work Here
+    //localStorage.["scores"] = [] //  <-Work Here
     usernameandscore.length
 }
 
@@ -200,3 +206,18 @@ init();
 var savedName = document.getElementById("userinitials");
 var savedScore = document.getElementById("savedscore");
 
+//need a function to display the score?
+
+// var lastuserandscore = JSON.parse(localStorage.getItem("userAndScore")); <-how to get stuff from local storage
+//need a forloop - then make the text content - append child
+
+// document.querySelector("userAndScore").addEventListener("click", function()){
+//     var highscores = JSON.parse(localStorage.setItem("userAndScore"))
+//     this.textContent = "userAndScore"
+// }
+
+
+// for (let index = 0; index < usernameandscore.length; index++) {
+//     const element = usernameandscore[index];
+    
+// }

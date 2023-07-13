@@ -64,3 +64,5 @@ Here is what I could understand from the example gif of what we needed to have.
     Highscore List        
     Go back Button
     Clear High Scores Button
+
+    
