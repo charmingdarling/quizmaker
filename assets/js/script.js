@@ -20,7 +20,7 @@ const questions = [
         correct: "Boolean"
     },
     {
-        question: "What would you use when recalling an "id"", 
+        question: "What would you use when recalling an 'id'?", 
         answers: [".", "@", "#", "~"], 
         correct: "@"
     },
